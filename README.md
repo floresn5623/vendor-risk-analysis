@@ -49,43 +49,44 @@ We built a data-driven analytics system that:
 ---
 
 ## 🏗️ Architecture
+
+```
 Raw Procurement Data (2024–2025 CSV Files)
-│
-▼
-┌─────────────────────────┐
-│   KNIME Data Pipeline   │
-│  ┌───────────────────┐  │
-│  │  Data Cleaning    │  │   → Standardize vendor names
-│  │  & Preparation    │  │   → Format numeric fields
-│  └────────┬──────────┘  │   → Merge yearly datasets
-│           │             │
-│  ┌────────▼──────────┐  │
-│  │ Vendor-Level      │  │   → GroupBy aggregation
-│  │ Aggregation       │  │   → Total spend, count, avg price
-│  └────────┬──────────┘  │
-│           │             │
-│  ┌────────▼──────────┐  │
-│  │ Risk Classification│  │   → High / Medium / Low
-│  │ Model             │  │   → Rule-based spend thresholds
-│  └────────┬──────────┘  │
-└───────────┼─────────────┘
-│
-▼
-vendor_risk_output.csv
-
-Pareto analysis outputs
-│
-▼
-┌─────────────────────────┐
-│  Tableau Dashboard      │
-│  • Vendor risk KPIs     │
-│  • Pareto spend chart   │
-│  • SWAM vs Non-SWAM     │
-└─────────────────────────┘
-│
-▼
-Business Insights & Strategic Recommendations
-
+            │
+            ▼
+ ┌─────────────────────────┐
+ │   KNIME Data Pipeline   │
+ │  ┌───────────────────┐  │
+ │  │  Data Cleaning    │  │   → Standardize vendor names
+ │  │  & Preparation    │  │   → Format numeric fields
+ │  └────────┬──────────┘  │   → Merge yearly datasets
+ │           │             │
+ │  ┌────────▼──────────┐  │
+ │  │ Vendor-Level      │  │   → GroupBy aggregation
+ │  │ Aggregation       │  │   → Total spend, count, avg price
+ │  └────────┬──────────┘  │
+ │           │             │
+ │  ┌────────▼──────────┐  │
+ │  │ Risk Classification│  │   → High / Medium / Low
+ │  │ Model             │  │   → Rule-based spend thresholds
+ │  └────────┬──────────┘  │
+ └───────────┼─────────────┘
+             │
+             ▼
+  vendor_risk_output.csv
+  + Pareto analysis outputs
+             │
+             ▼
+ ┌─────────────────────────┐
+ │  Tableau Dashboard      │
+ │  • Vendor risk KPIs     │
+ │  • Pareto spend chart   │
+ │  • SWAM vs Non-SWAM     │
+ └─────────────────────────┘
+             │
+             ▼
+  Business Insights & Strategic Recommendations
+```
 
 ---
 
@@ -134,6 +135,8 @@ Business Insights & Strategic Recommendations
 ---
 
 ## 📁 Project Structure
+
+```
 vendor-risk-analysis/
 │
 ├── data/
@@ -155,6 +158,7 @@ vendor-risk-analysis/
 │   └── Architecture_Document.docx
 │
 └── README.md
+```
 
 ---
 
